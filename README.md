@@ -4,22 +4,20 @@
 
 ## Grob-Planung
 
-> Fügen Sie hier ein Foto Ihres handgezeichnete Entwurfes ein, wie Ihre Start-Seite aussehen könnte.
+![Design-Idee](website_entwurf.jpeg)
 
 ## 6.6
 
-✍️ Heute habe ich... (50-100 Wörter)
-
-☝️ Vergessen Sie nicht, Ihr angepasstes `index.html` und eine Datei mit Ihren Texten hochzuladen.
+Heute habe ich zunächst die vorgegebene index.html-Datei bearbeitet und an mich angepasst. Anschliessend begann ich damit, mir ein passendes Design für meine Website zu überlegen und dieses Offline auf ein Blatt zu skizzieren (Bild oben). Dann bekam ich noch den Auftrag, mir 3 Beispielwebsites anzuschauen und mir 3 Plus- und 3 Minuspunkte dazu zu notieren (![Hier](Websites_Feedback.md)).
 
 ## 13.6
 
-- [ ] ...
-- [ ] ...
-- [ ] ...
-- [ ] ...
+- [ ] Verbessertes Design mit Canva (Farben, Schriftart, Bilder etc.)
+- [ ] HTML für Header programmieren (Hauptseite)
+- [ ] HTML für Main-Abschnitt programmieren (Hauptseite)
+- [ ] HTML für Footer programmieren (Hauptseite)
 
-✍️ Heute habe ich... (50-100 Wörter)
+
 
 ☝️ Vergessen Sie nicht, Ihre angepasste Website auf github hochzuladen
 
