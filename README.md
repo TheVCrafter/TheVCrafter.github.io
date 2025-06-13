@@ -12,11 +12,12 @@ Heute habe ich zunächst die vorgegebene index.html-Datei bearbeitet und an mich
 
 ## 13.6
 
-- [ ] Verbessertes Design mit Canva (Farben, Schriftart, Bilder etc.)
-- [ ] HTML für Header programmieren (Hauptseite)
+- [X] Verbessertes Design mit Canva (Farben, Schriftart, Bilder etc.)
+- [X] HTML für Header programmieren (Hauptseite)
 - [ ] HTML für Main-Abschnitt programmieren (Hauptseite)
 - [ ] HTML für Footer programmieren (Hauptseite)
 
+Heute habe ich mich vorallem damit beschäftigt, ein passendes Farbdesign für meine Website zu finden. Ich entschied mich schlussendlich für Grün-Schwarz mit Gradient im Main Abschnitt. Anschliessend dachte ich darüber nach, welche Subpages meine Website haben sollte. Ich entschied mich für eine about, eine projects und eine contact page. Anschliessend begann ich die Implementation des Headers und achtete auch schon bereits etwas die Website responsive zu halten.
 
 
 ☝️ Vergessen Sie nicht, Ihre angepasste Website auf github hochzuladen
