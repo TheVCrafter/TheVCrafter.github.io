@@ -261,13 +261,15 @@ mark{
   max-width: 800px;
   width: 100%;
   box-shadow: 0 0 25px rgba(42, 255, 42, 0.2);
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   text-align: left;
   color: #c0ffc0;
 }
 
 .privacy-card:hover {
-  box-shadow: 0 0 40px rgba(42, 255, 42, 0.4);
+  border-color: #2aff2a;
+  box-shadow: 0 0 30px rgba(42, 255, 42, 0.2);
+  transform: translateY(-3px);
 }
 
 .privacy-card h1 {
@@ -554,7 +556,7 @@ mark{
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(42, 255, 42, 0.1);
-  transition: all 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .contact-links::before,
@@ -657,7 +659,7 @@ mark{
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(42, 255, 42, 0.1);
-  transition: all 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .about-card::before {
@@ -775,9 +777,8 @@ mark {
   max-width: 600px;
   width: 100%;
   box-shadow: 0 0 25px rgba(42, 255, 42, 0.2);
-  transition: box-shadow 0.3s ease;
   text-align: left;
-  transition: all 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .search-card:hover {
