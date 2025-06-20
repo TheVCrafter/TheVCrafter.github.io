@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VinDev - Search Page</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../resources/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../resources/icons/favicon.svg" />
+  <link rel="shortcut icon" href="../resources/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../resources/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="../resources/icons/site.webmanifest" />
+</head>
+
+<body>
+
+  <header>
+    <a href="/" class="header_logo" aria-label="VinDev Home">
+      <img class="header_logo" src="../resources/images/VD.png" alt="VinDev Logo" />
+    </a>
+
+    <nav class="top_nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" class="nav-item">Home</a></li>
+        <li><a href="projects.html" class="nav-item">Projects</a></li>
+        <li><a href="about.html" class="nav-item">About</a></li>
+        <li><a href="contact.html" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
+
+    <form class="search_form" action="/search" method="GET" role="search" aria-label="Site Search">
+      <input type="search" name="q" placeholder="Search projects..." aria-label="Search projects" required />
+      <button type="submit" aria-label="Submit search">🔍</button>
+    </form>
+  </header>
+
+  <main>
+    <div class="main_content">
+      <section id="results" aria-live="polite" aria-atomic="true"></section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 VinDev. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const pages = [
+      { title: "Home", url: "index.html", content: "Welcome to VinDev" },
+      { title: "About", url: "about.html", content: "About VinDev who I am" },
+      { title: "Projects", url: "projects.html", content: "Projects portfolio work code apps" },
+      { title: "Contact", url: "contact.html", content: "Contact me get in touch email socials" }
+    ];
+
+    const resultsDiv = document.getElementById('results');
+
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, (match) => ({
+        '&': "&amp;",
+        '<': "&lt;",
+        '>': "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[match]);
+    }
+
+    function highlightText(text, query) {
+      if (!query) return escapeHtml(text);
+      const words = query.split(/\s+/).filter(Boolean);
+      const regexWords = words.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      const regex = new RegExp(`(${regexWords.join('|')})`, 'gi');
+      return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+    }
+
+    function renderResults(query, results) {
+      resultsDiv.innerHTML = '';
+
+      if (!query) {
+        resultsDiv.textContent = "Please enter a search term.";
+        return;
+      }
+
+      if (results.length === 0) {
+        resultsDiv.innerHTML = `No results found for "<strong>${escapeHtml(query)}</strong>".`;
+        return;
+      }
+
+      const p = document.createElement('p');
+      p.innerHTML = `Found ${results.length} result${results.length > 1 ? 's' : ''} for "<strong>${escapeHtml(query)}</strong>":`;
+      resultsDiv.appendChild(p);
+
+      const ul = document.createElement('ul');
+
+      results.forEach(page => {
+        const li = document.createElement('li');
+
+        const a = document.createElement('a');
+        a.href = page.url;
+        a.innerHTML = highlightText(page.title, query);
+        a.setAttribute('tabindex', '0');
+        li.appendChild(a);
+
+        let snippet = page.content.length > 150 ? page.content.slice(0, 150) + "…" : page.content;
+        const snippetP = document.createElement('p');
+        snippetP.className = 'snippet';
+        snippetP.innerHTML = highlightText(snippet, query);
+        li.appendChild(snippetP);
+
+        ul.appendChild(li);
+      });
+
+      resultsDiv.appendChild(ul);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryRaw = urlParams.get('q') || '';
+    const query = queryRaw.toLowerCase().trim();
+
+    const filteredResults = query ? pages.filter(page => {
+      const words = query.split(/\s+/);
+      return words.every(word =>
+        page.title.toLowerCase().includes(word) ||
+        page.content.toLowerCase().includes(word)
+      );
+    }) : [];
+
+    renderResults(queryRaw, filteredResults);
+  </script>
+</body>
+
+</html>

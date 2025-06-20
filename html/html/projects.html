@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VinDev – Projects</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/png" href="../resources/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../resources/icons/favicon.svg" />
+  <link rel="shortcut icon" href="../resources/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../resources/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="../resources/icons/site.webmanifest" />
+</head>
+<body class="project-page">
+  <header>
+      <img class="header_logo" src="../resources/images/VD.png" alt="VinDev Logo" />
+
+      <nav class="top_nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html" class="nav-item">Home</a></li>
+          <li><a href="about.html" class="nav-item">About</a></li>
+          <li><a href="projects.html" class="nav-item">Projects</a></li>
+          <li><a href="contact.html" class="nav-item">Contact</a></li>
+        </ul>
+      </nav>
+
+      <form class="search_form" action="search.html" method="GET" role="search">
+        <input
+          type="text"
+          name="q"
+          placeholder="Search..."
+          aria-label="Search site"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
+    </header>
+
+  <main>
+    <div class="main_content">
+      <h1>My Projects</h1>
+      <div class="project-grid">
+        <div class="project-card" onclick="showOverlay('project1')">
+          <h3>Formula 1 Voice Assistant</h3>
+          <p>A smart real-time race-Engineer using telemetry & AI.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">AI</span>
+            <span class="tag">F1</span>
+          </div>
+        </div>
+        <div class="project-card" onclick="showOverlay('project2')">
+          <h3>Wintris</h3>
+          <p>A Tetris like game implemented in Winforms.</p>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">Winforms</span>
+            <span class="tag">Tetris</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <footer>
+      <div class="footer-container">
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </nav>
+        <p>&copy; 2025 VinDev. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <div id="project1" class="overlay">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay()">&times;</button>
+      <h2>Formula 1 Voice Assistant</h2>
+      <p>
+        This project parses live F1 telemetry and enables voice commands to provide smart strategic advice based on the current race situation.
+        It connects to a local AI and is designed to improve the game experience by making communication between race engineer and driver more realistic.
+        The user can talk to the engineer using speech-to-text (STT) and receives AI-driven advice through text-to-speech (TTS).
+        The program is still in development and is therefore not fully functional yet.
+      </p>
+
+    </div>
+  </div>
+
+  <div id="project2" class="overlay">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay()">&times;</button>
+      <h2>Wintris</h2>
+      <p>
+        This game delivers a Tetris-like experience with a solid design and a variety of customization options.
+        It stores user data in a local database, displays current high scores, and allows personalized key bindings and volume settings through the settings menu.
+        Currently, the game only works on my PC because I didn't use relative paths when implementing it. 
+        I plan to improve this in the future and change the database type from MS SQL to SQLite to make it available for others as well.
+</p>
+    </div>
+  </div>
+
+  <script>
+    function showOverlay(id) {
+      document.getElementById(id).classList.add('active');
+    }
+
+
+    function hideOverlay() {
+      document.querySelectorAll('.overlay').forEach(el => el.classList.remove('active'));
+    }
+
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('overlay')) {
+        e.target.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
