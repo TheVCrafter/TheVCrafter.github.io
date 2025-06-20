@@ -225,6 +225,14 @@ main > * {
   color: #c0ffc0;
 }
 
+mark{
+  color: white;
+  background-color: #00ff00;
+  font-family: 'Share Tech Mono', monospace;
+  padding(2px 2px 2px 2px);
+  border-radius: 5px;
+  text-decoration: none;
+}
 .cta-button {
   display: inline-block;
   margin-top: 2rem;
@@ -705,32 +713,56 @@ main > * {
   left: 0;
 }
 
-/* Reuse main styles but modify for search page */
-.search-page {
-  position: relative;
-  background-image: url(../resources/images/background.gif);
-  background-size: cover;
-  background-position: center;
-  min-height: calc(100vh - 110px - 100px);
-  padding: 4rem 2vw;
-  color: #aaffaa;
+mark {
+  color: white;
+  background-color: #00ff00;
+  padding: 2px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.search_form {
   display: flex;
+  gap: 0.75rem;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  margin-top: 1rem;
 }
 
-.search-page::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
+.search_form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #2aff2a88;
+  border-radius: 24px;
+  background-color: rgba(17, 17, 17, 0.85);
+  color: #2aff2a;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-page > * {
-  position: relative;
-  z-index: 2;
+.search_form input::placeholder {
+  color: #55ff5588;
+}
+
+.search_form input:focus {
+  border-color: #2aff2a;
+  box-shadow: 0 0 10px #2aff2a99;
+  background-color: rgba(0, 30, 0, 0.95);
+}
+
+.search_form button {
+  background: none;
+  border: none;
+  color: #aaffaa;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.search_form button:hover {
+  color: #2aff2a;
+  text-shadow: 0 0 8px #2aff2a;
 }
 
 .search-card {
@@ -738,10 +770,11 @@ main > * {
   border: 2px solid #2aff2a55;
   border-radius: 12px;
   padding: 2rem 3rem;
-  max-width: 480px;
+  max-width: 600px;
   width: 100%;
   box-shadow: 0 0 25px rgba(42, 255, 42, 0.2);
   transition: box-shadow 0.3s ease;
+  text-align: left;
 }
 
 .search-card:hover {
@@ -756,63 +789,9 @@ main > * {
 }
 
 .search-card p {
-  font-family: 'Share Tech Mono', monospace;
   font-size: 1.1rem;
   color: #c0ffc0;
   margin-top: 1rem;
-}
-
-/* Improve form styling inside the card */
-.search_card .search_form,
-.search_form {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  justify-content: center;
-}
-
-.search_card .search_form input,
-.search_form input {
-  flex: 1;
-  padding: 12px 16px;
-  border: 2px solid #2aff2a88;
-  border-radius: 24px;
-  background-color: rgba(17, 17, 17, 0.85);
-  color: #2aff2a;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1.1rem;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(6px);
-}
-
-.search_form input::placeholder {
-  color: #55ff5588;
-}
-
-.search_form input:focus {
-  border-color: #2aff2a;
-  box-shadow: 0 0 10px #2aff2a99;
-  background-color: rgba(0, 30, 0, 0.95);
-}
-
-.search_form button {
-  padding: 0 18px;
-  border-radius: 50%;
-  border: none;
-  background-color: transparent;
-  color: #aaffaa;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search_form button:hover {
-  color: #2aff2a;
-  text-shadow: 0 0 8px #2aff2a;
 }
 
 .no-results {
@@ -820,6 +799,34 @@ main > * {
   color: #ff6666;
   margin-top: 2rem;
   text-align: center;
+}
+
+.search-page {
+  position: relative;
+  background-image: url(../resources/images/background.gif);
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 110px - 100px);
+  padding: 4rem 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.search-page > * {
+  position: relative;
+  z-index: 2;
 }
 
 footer {
@@ -976,6 +983,14 @@ footer p {
 
   .overlay h3 {
     font-size: 1.2rem;
+  }
+
+  .search-card {
+    padding: 1.5rem;
+  }
+
+  .search_form input {
+    font-size: 1rem;
   }
 
   footer {

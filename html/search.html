@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VinDev - Search Page</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>Search | VinDev</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../resources/icons/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="../resources/icons/favicon.svg" />
@@ -36,9 +35,11 @@
     </form>
   </header>
 
-  <main>
-    <div class="main_content">
+  <main class="search-page">
+    <div class="search-card">
+      <h1>Search Results</h1>
       <section id="results" aria-live="polite" aria-atomic="true"></section>
+    </div>
   </main>
 
   <footer>
@@ -93,7 +94,7 @@
       }
 
       if (results.length === 0) {
-        resultsDiv.innerHTML = `No results found for "<strong>${escapeHtml(query)}</strong>".`;
+        resultsDiv.innerHTML = `<p class="no-results">No results found for "<strong>${escapeHtml(query)}</strong>".</p>`;
         return;
       }
 
@@ -105,7 +106,6 @@
 
       results.forEach(page => {
         const li = document.createElement('li');
-
         const a = document.createElement('a');
         a.href = page.url;
         a.innerHTML = highlightText(page.title, query);
