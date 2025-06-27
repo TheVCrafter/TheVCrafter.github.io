@@ -43,4 +43,3 @@ Nachdem ich die Website auf GitHub hochgeladen hatte, bemerkte ich einen Fehler:
 
 ## Reflexion
 
-✍️ Was ging gut, was ging weniger gut? Was haben Sie gelernt, und was würden Sie im nächsten Jahr versuchen besser zu machen? Fassen Sie auch einen übergeordneten Vorsatz für Ihr nächstes Jahr im Lernatelier (100 bis 200 Wörter).
