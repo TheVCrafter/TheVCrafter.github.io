@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | VinDev</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" type="image/png" href="../resources/icons/favicon-96x96.png" sizes="96x96" />
@@ -11,31 +12,25 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../resources/icons/apple-touch-icon.png" />
   <link rel="manifest" href="../resources/icons/site.webmanifest" />
 </head>
+
 <body class="project-page">
   <header>
-      <img class="header_logo" src="../resources/images/VD.png" alt="VinDev Logo" />
+    <img class="header_logo" src="../resources/images/VD.png" alt="VinDev Logo" />
 
-      <nav class="top_nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="../index.html" class="nav-item">Home</a></li>
-          <li><a href="about.html" class="nav-item">About</a></li>
-          <li><a href="projects.html" class="nav-item">Projects</a></li>
-          <li><a href="contact.html" class="nav-item">Contact</a></li>
-        </ul>
-      </nav>
+    <nav class="top_nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="../index.html" class="nav-item">Home</a></li>
+        <li><a href="about.html" class="nav-item">About</a></li>
+        <li><a href="projects.html" class="nav-item">Projects</a></li>
+        <li><a href="contact.html" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
 
-      <form class="search_form" action="search.html" method="GET" role="search">
-        <input
-          type="text"
-          name="q"
-          placeholder="Search..."
-          aria-label="Search site"
-          autocomplete="off"
-          required
-        />
-        <button type="submit" aria-label="Search">🔍</button>
-      </form>
-    </header>
+    <form class="search_form" action="search.html" method="GET" role="search">
+      <input type="text" name="q" placeholder="Search..." aria-label="Search site" autocomplete="off" required />
+      <button type="submit" aria-label="Search">🔍</button>
+    </form>
+  </header>
 
   <main>
     <div class="main_content">
@@ -59,36 +54,48 @@
             <span class="tag">Tetris</span>
           </div>
         </div>
+        <div class="project-card" onclick="showOverlay('project3')">
+          <h3>Wintris Website</h3>
+          <p>A Website made for my Wintris Game</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Website</span>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 
-    <footer>
-      <div class="footer-container">
-        <nav class="footer-nav" aria-label="Footer Navigation">
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </nav>
-        <p>&copy; 2025 VinDev. All rights reserved.</p>
-      </div>
-    </footer>
+  <footer>
+    <div class="footer-container">
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2025 VinDev. All rights reserved.</p>
+    </div>
+  </footer>
 
   <div id="project1" class="overlay">
     <div class="overlay-content">
       <button class="overlay-close" onclick="hideOverlay()">&times;</button>
       <h2>Formula 1 Voice Assistant</h2>
       <p>
-        This project parses live F1 telemetry and enables voice commands to provide smart strategic advice based on the current race situation.
-        It connects to a local AI and is designed to improve the game experience by making communication between race engineer and driver more realistic.
-        The user can talk to the engineer using speech-to-text (STT) and receives AI-driven advice through text-to-speech (TTS).
+        This project parses live F1 telemetry and enables voice commands to provide smart strategic advice based on the
+        current race situation.
+        It connects to a local AI and is designed to improve the game experience by making communication between race
+        engineer and driver more realistic.
+        The user can talk to the engineer using speech-to-text (STT) and receives AI-driven advice through
+        text-to-speech (TTS).
         The program is still in development and is therefore not fully functional yet.
       </p>
-
+      <img class="overlay-image" src="../resources/images/Race-Engineer.png" alt="Screenshot of Race-Engineer">
     </div>
   </div>
 
@@ -98,12 +105,44 @@
       <h2>Wintris</h2>
       <p>
         This game delivers a Tetris-like experience with a solid design and a variety of customization options.
-        It stores user data in a local database, displays current high scores, and allows personalized key bindings and volume settings through the settings menu.
-        Currently, the game only works on my PC because I didn't use relative paths when implementing it. 
-        I plan to improve this in the future and change the database type from MS SQL to SQLite to make it available for others as well.
-</p>
+        It stores user data in a local database, displays current high scores, and allows personalized key bindings and
+        volume settings through the settings menu.
+        Currently, the game only works on my PC because I didn't use relative paths when implementing it.
+        I plan to improve this in the future and change the database type from MS SQL to SQLite to make it available for
+        others as well.
+      </p>
+      <div class="overlay-images-wrapper">
+        <img src="../resources/images/title-screen.png" alt="Screenshot of Wintris Title-Screen">
+        <img src="../resources/images/gameplay.png" alt="Screenshot of Wintris Gameplay">
+        <img src="../resources/images/highscores.png" alt="Screenshot of Wintris Highscores">
+      </div>
     </div>
   </div>
+
+  <div id="project3" class="overlay">
+    <div class="overlay-content">
+      <button class="overlay-close" onclick="hideOverlay()">&times;</button>
+      <h2>Wintris Website</h2>
+      <p>
+        This project showcases my game <strong>Wintris</strong> and includes a download section.
+        Currently, the download links are placeholders (dummy downloads), as the game is not yet
+        compatible with external systems.
+        <br><br>
+        I focused on giving the website a design that matches the retro style of the game.
+        However, I'm still working on improving responsiveness, especially on the
+        <em>Download</em> and <em>Features</em> pages.
+        <br><br>
+        The site is hosted on Netlify and can be visited here:
+        <a href="https://685c23a6ad27078114126343--glistening-sfogliatella-3b4324.netlify.app/" target="_blank">Wintris
+          Page</a>.
+      </p>
+      <div class="overlay-image-wrapper">
+        <img class="overlay-image" src="../resources/images/Wintris-Site.png" alt="Wintris Website Screenshot">
+      </div>
+
+    </div>
+  </div>
+
 
   <script>
     function showOverlay(id) {
@@ -122,4 +161,5 @@
     });
   </script>
 </body>
+
 </html>
