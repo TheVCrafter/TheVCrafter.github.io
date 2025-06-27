@@ -38,11 +38,8 @@ Nachdem ich die Website auf GitHub hochgeladen hatte, bemerkte ich einen Fehler:
 
 ## 27.7 Abschluss
 
-- [ ] Bearbeitung der beim Feedback erhaltenen Arbeitspackete
+- [X] Bearbeitung der beim Feedback erhaltenen Arbeitspackete
 
-✍️ Heute habe ich... (50-100 Wörter)
-
-☝️ Vergessen Sie nicht, Ihre angepasste Website auf github hochzuladen
 
 ## Reflexion
 
